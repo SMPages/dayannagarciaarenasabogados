@@ -1,0 +1,85 @@
+<header
+  class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
+  [class.bg-white]="scrolled() || mobileMenuOpen()"
+  [class.shadow-lg]="scrolled() || mobileMenuOpen()"
+  [class.shadow-navy-900/5]="scrolled() || mobileMenuOpen()"
+  [class.py-3]="scrolled()"
+  [class.py-5]="!scrolled()"
+>
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
+    <a
+      href="#inicio"
+      class="flex items-center gap-2.5"
+      (click)="closeMobileMenu()"
+    >
+      <svg lucideGavel class="h-6 w-6 shrink-0 text-gold-500"></svg>
+      <span class="font-serif-display leading-none">
+        <span
+          class="block text-[0.95rem] font-semibold tracking-[0.04em] sm:text-base"
+          [class.text-navy-900]="scrolled() || mobileMenuOpen()"
+          [class.text-white]="!scrolled() && !mobileMenuOpen()"
+        >Dayanna García Arenas</span>
+        <span class="block text-[0.65rem] font-medium uppercase tracking-[0.35em] text-gold-500">Abogados</span>
+      </span>
+    </a>
+
+    <ul class="hidden items-center gap-8 lg:flex">
+      @for (link of links; track link.fragment) {
+        <li>
+          <a
+            [href]="'#' + link.fragment"
+            class="text-sm font-medium transition-colors hover:text-gold-500"
+            [class.text-navy-800]="scrolled()"
+            [class.text-white]="!scrolled()"
+          >{{ link.label }}</a>
+        </li>
+      }
+    </ul>
+
+    <a
+      [href]="whatsappLink"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hidden rounded-full bg-navy-900 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gold-600 lg:inline-block"
+    >
+      Agendar Consulta
+    </a>
+
+    <button
+      type="button"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors lg:hidden"
+      [class.text-navy-900]="scrolled() || mobileMenuOpen()"
+      [class.text-white]="!scrolled() && !mobileMenuOpen()"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="mobileMenuOpen()"
+      aria-label="Abrir menú de navegación"
+    >
+      @if (mobileMenuOpen()) {
+        <svg lucideX class="h-6 w-6"></svg>
+      } @else {
+        <svg lucideMenu class="h-6 w-6"></svg>
+      }
+    </button>
+  </nav>
+
+  @if (mobileMenuOpen()) {
+    <div class="mx-6 mt-4 flex flex-col gap-1 rounded-2xl border border-navy-900/10 bg-white p-4 shadow-xl lg:hidden">
+      @for (link of links; track link.fragment) {
+        <a
+          [href]="'#' + link.fragment"
+          class="rounded-lg px-4 py-3 text-sm font-medium text-navy-800 transition-colors hover:bg-stone-50 hover:text-gold-600"
+          (click)="closeMobileMenu()"
+        >{{ link.label }}</a>
+      }
+      <a
+        [href]="whatsappLink"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-2 rounded-lg bg-navy-900 px-4 py-3 text-center text-sm font-semibold text-white"
+        (click)="closeMobileMenu()"
+      >
+        Agendar Consulta
+      </a>
+    </div>
+  }
+</header>

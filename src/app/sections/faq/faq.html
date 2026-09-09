@@ -1,0 +1,39 @@
+<section class="bg-stone-50 py-24">
+  <div class="mx-auto max-w-4xl px-6 lg:px-8">
+    <app-section-heading
+      kicker="Confianza y claridad"
+      title="Preguntas frecuentes"
+      subtitle="Resolvemos las dudas más comunes antes de tu primera consulta."
+    />
+
+    <div class="mt-14 divide-y divide-navy-900/10 rounded-2xl border border-navy-900/10 bg-white">
+      @for (item of items; track item.question; let i = $index) {
+        <div>
+          <h3>
+            <button
+              type="button"
+              class="flex w-full items-center justify-between gap-6 px-6 py-5 text-left"
+              (click)="toggle(i)"
+              [attr.aria-expanded]="openIndex() === i"
+              [attr.aria-controls]="'faq-panel-' + i"
+            >
+              <span class="font-serif-display text-base font-semibold text-navy-900 sm:text-lg">
+                {{ item.question }}
+              </span>
+              <svg
+                lucideChevronDown
+                class="h-5 w-5 shrink-0 text-gold-600 transition-transform duration-300"
+                [class.rotate-180]="openIndex() === i"
+              ></svg>
+            </button>
+          </h3>
+          @if (openIndex() === i) {
+            <div [id]="'faq-panel-' + i" class="px-6 pb-6 text-sm leading-relaxed text-navy-700 sm:text-base">
+              {{ item.answer }}
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<section class="bg-white py-24">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <app-section-heading
+      kicker="Áreas de práctica"
+      title="Litigio estratégico y defensa integral"
+      subtitle="Concentramos nuestra experticia en tres frentes de alta complejidad y acompañamos a nuestros clientes con asesoría corporativa e integral en el resto de sus asuntos jurídicos."
+    />
+
+    <div class="mt-16">
+      <h3 class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-600">Áreas principales</h3>
+      <div class="mt-6 grid gap-6 lg:grid-cols-3">
+        @for (area of coreAreas(); track area.slug) {
+          <app-practice-area-card [area]="area" />
+        }
+      </div>
+    </div>
+
+    <div class="mt-16">
+      <h3 class="text-xs font-semibold uppercase tracking-[0.3em] text-navy-700/60">Asesoría complementaria</h3>
+      <div class="mt-6 grid gap-6 lg:grid-cols-3">
+        @for (area of complementaryAreas(); track area.slug) {
+          <app-practice-area-card [area]="area" />
+        }
+      </div>
+    </div>
+  </div>
+</section>

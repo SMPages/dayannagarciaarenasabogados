@@ -1,0 +1,68 @@
+<app-navbar />
+
+<main>
+  <app-hero />
+
+  <div id="nuestro-enfoque">
+    @defer (on viewport) {
+      <app-how-we-work />
+    } @placeholder (minimum 100ms) {
+      <div class="h-[420px] bg-stone-50"></div>
+    } @loading (minimum 100ms) {
+      <div class="flex h-[420px] items-center justify-center bg-stone-50">
+        <span class="h-8 w-8 animate-spin rounded-full border-2 border-gold-500 border-t-transparent"></span>
+      </div>
+    }
+  </div>
+
+  <div id="areas-de-practica">
+    @defer (on viewport) {
+      <app-practice-areas />
+    } @placeholder (minimum 100ms) {
+      <div class="h-[600px] bg-white"></div>
+    } @loading (minimum 100ms) {
+      <div class="flex h-[600px] items-center justify-center bg-white">
+        <span class="h-8 w-8 animate-spin rounded-full border-2 border-gold-500 border-t-transparent"></span>
+      </div>
+    }
+  </div>
+
+  <div id="perfil-profesional">
+    @defer (on viewport) {
+      <app-about-founder />
+    } @placeholder (minimum 100ms) {
+      <div class="h-[560px] bg-navy-900"></div>
+    } @loading (minimum 100ms) {
+      <div class="flex h-[560px] items-center justify-center bg-navy-900">
+        <span class="h-8 w-8 animate-spin rounded-full border-2 border-gold-500 border-t-transparent"></span>
+      </div>
+    }
+  </div>
+
+  <div id="preguntas-frecuentes">
+    @defer (on viewport) {
+      <app-faq />
+    } @placeholder (minimum 100ms) {
+      <div class="h-[480px] bg-stone-50"></div>
+    } @loading (minimum 100ms) {
+      <div class="flex h-[480px] items-center justify-center bg-stone-50">
+        <span class="h-8 w-8 animate-spin rounded-full border-2 border-gold-500 border-t-transparent"></span>
+      </div>
+    }
+  </div>
+
+  <div id="contacto">
+    @defer (on viewport) {
+      <app-contact />
+    } @placeholder (minimum 100ms) {
+      <div class="h-[600px] bg-white"></div>
+    } @loading (minimum 100ms) {
+      <div class="flex h-[600px] items-center justify-center bg-white">
+        <span class="h-8 w-8 animate-spin rounded-full border-2 border-gold-500 border-t-transparent"></span>
+      </div>
+    }
+  </div>
+</main>
+
+<app-footer />
+<app-whatsapp-button />

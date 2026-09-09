@@ -1,0 +1,60 @@
+<footer class="bg-navy-950 text-white/70">
+  <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
+      <div>
+        <div class="flex items-center gap-2.5">
+          <svg lucideGavel class="h-6 w-6 text-gold-500"></svg>
+          <span class="font-serif-display text-lg font-semibold text-white">{{ site.brandName }}</span>
+        </div>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed">
+          Firma jurídica boutique especializada en litigio penal, restitución de tierras y extinción de dominio,
+          con acompañamiento corporativo integral y visión de estándares internacionales.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-serif-display text-sm font-semibold uppercase tracking-[0.2em] text-gold-400">Áreas de Práctica</h3>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          @for (area of practiceAreas; track area.slug) {
+            <li>
+              <a [href]="'#areas-de-practica'" class="transition-colors hover:text-gold-400">{{ area.title }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-serif-display text-sm font-semibold uppercase tracking-[0.2em] text-gold-400">Contacto</h3>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex items-start gap-2.5">
+            <svg lucidePhone class="mt-0.5 h-4 w-4 shrink-0 text-gold-500"></svg>
+            <a [href]="whatsappLink" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-gold-400">
+              {{ site.whatsappDisplay }}
+            </a>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg lucideMail class="mt-0.5 h-4 w-4 shrink-0 text-gold-500"></svg>
+            <a [href]="'mailto:' + site.email" class="transition-colors hover:text-gold-400">{{ site.email }}</a>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg lucideMapPin class="mt-0.5 h-4 w-4 shrink-0 text-gold-500"></svg>
+            <span>Presencial con cita previa en Bogotá · Virtual a toda Colombia</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-white/10 pt-8 text-xs leading-relaxed text-white/50">
+      <p>
+        El envío de mensajes a través de este sitio o de WhatsApp no constituye, por sí solo, el inicio de una
+        relación cliente-abogado. Esta se formaliza únicamente mediante la suscripción del contrato de prestación
+        de servicios profesionales correspondiente.
+      </p>
+      <p class="mt-2">
+        {{ site.shortName }} trata los datos personales suministrados conforme a su Política de Tratamiento de
+        Datos Personales, en cumplimiento de la Ley 1581 de 2012 y demás normas concordantes sobre Habeas Data.
+      </p>
+      <p class="mt-4">© {{ year }} {{ site.brandName }}. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

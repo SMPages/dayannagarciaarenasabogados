@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   DGA Abogados — Design tokens
+   Identidad: azul marino profundo + dorado champaña sobre fondos claros.
+--------------------------------------------------------------------------- */
+@theme {
+  --font-serif: 'Playfair Display', 'Georgia', serif;
+  --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --color-navy-950: #08111f;
+  --color-navy-900: #0b192c;
+  --color-navy-800: #122238;
+  --color-navy-700: #1a2f4a;
+  --color-navy-600: #24405f;
+
+  --color-gold-300: #e6d5b8;
+  --color-gold-400: #d4af9a;
+  --color-gold-500: #c5a880;
+  --color-gold-600: #ad8a5d;
+
+  --color-stone-50: #f8f9fa;
+  --color-stone-100: #f1f5f9;
+
+  --animate-fade-up: fade-up 0.7s ease-out both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-navy-900);
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4,
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+::selection {
+  background-color: var(--color-gold-500);
+  color: #ffffff;
+}
+
+/* Scrollbar sobrio, coherente con la identidad de la firma */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-stone-50);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-navy-700);
+  border-radius: 999px;
+  border: 2px solid var(--color-stone-50);
+}

@@ -1,0 +1,61 @@
+<section class="bg-navy-900 py-24">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="grid gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+      <div class="mx-auto w-full max-w-sm">
+        <div class="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-gold-500/20 bg-navy-800">
+          <img
+            src="/photos/foto_1.JPG"
+            alt="Fotografía profesional de la Dra. Dayanna García Arenas"
+            class="h-full w-full object-cover object-[center_30%]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-900/70 via-navy-900/0 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 h-1.5 bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600"></div>
+        </div>
+      </div>
+
+      <div>
+        <app-section-heading
+          kicker="Perfil profesional"
+          title="Dra. Dayanna García Arenas"
+          [light]="true"
+          align="left"
+        />
+
+        <p class="mt-6 text-base leading-relaxed text-white/75">
+          Directora y fundadora de Dayanna García Arenas Abogados, la Dra. García Arenas es abogada con
+          una sólida trayectoria litigante y Magíster en Derecho Penal Internacional, con doble titulación en
+          España y Colombia. Esta formación le permite abordar cada caso con un criterio jurídico riguroso,
+          articulando los estándares internacionales de derechos y garantías procesales con el conocimiento
+          profundo del sistema jurídico colombiano.
+        </p>
+        <p class="mt-4 text-base leading-relaxed text-white/75">
+          Su ejercicio profesional se concentra en el litigio estratégico de alta complejidad —penal, restitución
+          de tierras y extinción de dominio— y en la defensa patrimonial y personal contundente de sus clientes.
+          Su filosofía de atención es clara: escuchar primero, entender la urgencia real del caso y, solo después,
+          trazar una ruta jurídica honesta y sostenible en el tiempo.
+        </p>
+
+        <div class="mt-10 grid gap-6 sm:grid-cols-3">
+          @for (credential of credentials; track credential.title) {
+            <div class="rounded-xl border border-white/10 p-5">
+              @switch (credential.icon) {
+                @case ('graduation') {
+                  <svg lucideGraduationCap class="h-5 w-5 text-gold-400"></svg>
+                }
+                @case ('gavel') {
+                  <svg lucideGavel class="h-5 w-5 text-gold-400"></svg>
+                }
+                @case ('globe') {
+                  <svg lucideGlobe class="h-5 w-5 text-gold-400"></svg>
+                }
+              }
+              <h4 class="mt-3 text-sm font-semibold text-white">{{ credential.title }}</h4>
+              <p class="mt-2 text-xs leading-relaxed text-white/60">{{ credential.description }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

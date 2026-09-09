@@ -1,0 +1,88 @@
+<section
+  id="inicio"
+  class="relative flex min-h-screen items-center overflow-hidden bg-navy-900 pt-28 pb-20"
+>
+  <!-- Textura decorativa sobria -->
+  <div class="pointer-events-none absolute inset-0 opacity-40" aria-hidden="true">
+    <div class="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-navy-700/60 blur-3xl"></div>
+    <div class="absolute -right-16 top-1/3 h-80 w-80 rounded-full bg-gold-600/10 blur-3xl"></div>
+  </div>
+
+  <div class="relative mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8">
+    <div class="animate-fade-up">
+      <p class="mb-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-gold-400">
+        <span class="h-px w-10 bg-gold-400"></span>
+        DGA Abogados · Firma Jurídica Boutique
+      </p>
+
+      <h1 class="font-serif-display text-4xl font-semibold leading-[1.15] text-white sm:text-5xl lg:text-[3.4rem]">
+        Defensa técnica, rigor penal y protección patrimonial con visión internacional.
+      </h1>
+
+      <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
+        Evaluamos tu situación con reserva absoluta, identificamos la urgencia jurídica y trazamos, desde el
+        primer contacto, una estrategia sólida, honesta y verificable.
+      </p>
+
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+        <a
+          [href]="whatsappLink"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-8 py-4 text-sm font-semibold text-navy-950 shadow-lg shadow-gold-500/20 transition-transform hover:-translate-y-0.5 hover:bg-gold-400"
+        >
+          <svg lucideMessageCircle class="h-4 w-4"></svg>
+          Consultar por WhatsApp
+        </a>
+        <a
+          href="#areas-de-practica"
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-8 py-4 text-sm font-semibold text-white transition-colors hover:border-gold-400 hover:text-gold-300"
+        >
+          Conocer Áreas de Práctica
+        </a>
+      </div>
+
+      <dl class="mt-14 grid grid-cols-1 gap-5 border-t border-white/10 pt-8 sm:grid-cols-3">
+        <div class="flex items-start gap-3">
+          <svg lucideGraduationCap class="h-5 w-5 shrink-0 text-gold-400"></svg>
+          <dt class="text-sm font-medium leading-snug text-white/80">Doble Titulación España &amp; Colombia</dt>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg lucideGlobe class="h-5 w-5 shrink-0 text-gold-400"></svg>
+          <dt class="text-sm font-medium leading-snug text-white/80">Cobertura Nacional y Virtual</dt>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg lucideLock class="h-5 w-5 shrink-0 text-gold-400"></svg>
+          <dt class="text-sm font-medium leading-snug text-white/80">Confidencialidad Absoluta</dt>
+        </div>
+      </dl>
+    </div>
+
+    <div class="relative hidden lg:block">
+      <div class="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-gold-500/20 shadow-2xl">
+        <img
+          src="/photos/foto_2.JPG"
+          alt="Dra. Dayanna García Arenas, directora y fundadora de DGA Abogados"
+          class="h-full w-full object-cover object-center"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-transparent"></div>
+
+        <div class="absolute inset-x-0 bottom-0 p-8">
+          <p class="font-serif-display text-xl italic leading-snug text-white">
+            "Primero te escuchamos y analizamos la urgencia; luego trazamos la ruta jurídica."
+          </p>
+          <div class="mt-6 flex items-center gap-3 border-t border-white/15 pt-5">
+            <span class="flex h-11 w-11 items-center justify-center rounded-full border border-gold-500/50 font-serif-display text-sm font-semibold text-gold-400">
+              DGA
+            </span>
+            <div>
+              <p class="text-sm font-semibold text-white">Dra. Dayanna García Arenas</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-white/60">Directora y Fundadora</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,73 @@
+<article
+  class="group relative flex h-full flex-col rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1"
+  [class.bg-navy-900]="area().group === 'core'"
+  [class.text-white]="area().group === 'core'"
+  [class.shadow-xl]="area().group === 'core'"
+  [class.shadow-navy-900/20]="area().group === 'core'"
+  [class.border]="area().group === 'complementaria'"
+  [class.border-navy-900/10]="area().group === 'complementaria'"
+  [class.bg-white]="area().group === 'complementaria'"
+  [class.hover:shadow-lg]="area().group === 'complementaria'"
+>
+  @if (area().group === 'core') {
+    <span class="absolute right-6 top-6 rounded-full bg-gold-500/15 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-gold-400">
+      Core
+    </span>
+  }
+
+  <span
+    class="flex h-12 w-12 items-center justify-center rounded-xl"
+    [class.bg-gold-500/15]="area().group === 'core'"
+    [class.bg-stone-50]="area().group === 'complementaria'"
+  >
+    @switch (area().icon) {
+      @case ('scale') {
+        <svg lucideScale class="h-6 w-6" [class.text-gold-400]="area().group === 'core'" [class.text-navy-800]="area().group === 'complementaria'"></svg>
+      }
+      @case ('map') {
+        <svg lucideMap class="h-6 w-6" [class.text-gold-400]="area().group === 'core'" [class.text-navy-800]="area().group === 'complementaria'"></svg>
+      }
+      @case ('shield-check') {
+        <svg lucideShieldCheck class="h-6 w-6" [class.text-gold-400]="area().group === 'core'" [class.text-navy-800]="area().group === 'complementaria'"></svg>
+      }
+      @case ('briefcase') {
+        <svg lucideBriefcase class="h-6 w-6" [class.text-gold-400]="area().group === 'core'" [class.text-navy-800]="area().group === 'complementaria'"></svg>
+      }
+      @case ('file-text') {
+        <svg lucideFileText class="h-6 w-6" [class.text-gold-400]="area().group === 'core'" [class.text-navy-800]="area().group === 'complementaria'"></svg>
+      }
+      @case ('building-2') {
+        <svg lucideBuilding2 class="h-6 w-6" [class.text-gold-400]="area().group === 'core'" [class.text-navy-800]="area().group === 'complementaria'"></svg>
+      }
+    }
+  </span>
+
+  <h3 class="mt-6 font-serif-display text-xl font-semibold" [class.text-white]="area().group === 'core'" [class.text-navy-900]="area().group === 'complementaria'">
+    {{ area().title }}
+  </h3>
+
+  <p class="mt-3 text-sm leading-relaxed" [class.text-white/70]="area().group === 'core'" [class.text-navy-700]="area().group === 'complementaria'">
+    {{ area().summary }}
+  </p>
+
+  <ul class="mt-5 flex-1 space-y-2.5 text-sm">
+    @for (point of area().points; track point) {
+      <li class="flex items-start gap-2.5" [class.text-white/80]="area().group === 'core'" [class.text-navy-700]="area().group === 'complementaria'">
+        <span class="mt-2 h-1 w-1 shrink-0 rounded-full" [class.bg-gold-400]="area().group === 'core'" [class.bg-gold-600]="area().group === 'complementaria'"></span>
+        {{ point }}
+      </li>
+    }
+  </ul>
+
+  <a
+    [href]="consultLink"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="mt-7 inline-flex items-center gap-2 text-sm font-semibold transition-colors"
+    [class.text-gold-400]="area().group === 'core'"
+    [class.text-navy-900]="area().group === 'complementaria'"
+  >
+    Consultar este asunto
+    <svg lucideArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1"></svg>
+  </a>
+</article>

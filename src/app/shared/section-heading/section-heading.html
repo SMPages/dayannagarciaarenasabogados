@@ -1,0 +1,28 @@
+<div class="max-w-3xl" [class.mx-auto]="align() === 'center'" [class.text-center]="align() === 'center'">
+  @if (kicker()) {
+    <p
+      class="mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em]"
+      [class.text-gold-600]="!light()"
+      [class.text-gold-400]="light()"
+    >
+      <span class="h-px w-8" [class.bg-gold-600]="!light()" [class.bg-gold-400]="light()"></span>
+      {{ kicker() }}
+    </p>
+  }
+  <h2
+    class="font-serif-display text-3xl font-semibold leading-tight sm:text-4xl"
+    [class.text-navy-900]="!light()"
+    [class.text-white]="light()"
+  >
+    {{ title() }}
+  </h2>
+  @if (subtitle()) {
+    <p
+      class="mt-4 text-base leading-relaxed sm:text-lg"
+      [class.text-navy-700]="!light()"
+      [class.text-white/80]="light()"
+    >
+      {{ subtitle() }}
+    </p>
+  }
+</div>
